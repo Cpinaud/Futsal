@@ -63,6 +63,14 @@ public class FutsalTest {
 		
 	}
 	
+	@Test
 	
+	public void queSePuedaAgregarEquiposAUnPartido() {
+		Equipo equipo1 = new Equipo("Velez Sarsfield");
+		Equipo equipo2 = new Equipo("Argentinos Jr.");
+		Partido partido1 = new Partido(equipo1,equipo2);
+		assertNotNull(partido1.getLocal());
+		assertNotNull(partido1.getVisitante());
+	}
 
 }
