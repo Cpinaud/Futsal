@@ -14,6 +14,7 @@ public class Equipo {
 		this.jugadores = new Jugador [5];
 		this.posicionActualJugador=0;
 		this.posicionActualGoles=0;
+		this.goles = new Gol [100];
 	}
 
 	public Jugador getJugador(Integer i) {
@@ -46,21 +47,27 @@ public class Equipo {
 		}
 
 	public void registrarGol(String jugador,Double minuto) {
-		
-		for(int i = 0;i<this.jugadores.length;i++) {
+		this.goles[posicionActualGoles]= new Gol (jugador,minuto);
+		posicionActualGoles++;
+		/*for(int i = 0;i<this.jugadores.length;i++) {
 			if(this.jugadores[i].getNombre().equals(jugador)) {
 				Gol gol = new Gol(jugador,minuto);
 				this.goles[posicionActualGoles] = gol;
 				posicionActualGoles++;
 			}
 				
-		}
+		}*/
 
 	}
 
 	public Gol getGol(Integer posicion) {
 		Gol gol = this.goles[posicion];
 		return gol;
+	}
+
+	public Integer getCantGoles() {
+		
+		return posicionActualGoles;
 	}
 
 }
