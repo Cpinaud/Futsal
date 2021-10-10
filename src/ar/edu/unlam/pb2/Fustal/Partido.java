@@ -16,4 +16,9 @@ public class Partido {
 	}
 	
 
+	public Object getVisitante() {
+		// TODO Auto-generated method stub
+		return this.visitante;
+	}
+
 }

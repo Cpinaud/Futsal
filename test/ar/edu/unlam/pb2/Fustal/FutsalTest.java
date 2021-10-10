@@ -74,6 +74,19 @@ public class FutsalTest {
 		
 	}
 	
+	@Test
+	public void queSePuedaAgregarEquiposAlPartido() {
+		Equipo local = new Equipo("Velez Sarsfield");
+		Equipo visitante = new Equipo("Chicago");
+		Partido partido1 = new Partido(local,visitante);
+		partido1.getLocal().registrarGol("Messi",14.24);
+		assertNotNull(partido1.getLocal());
+		assertNotNull(partido1.getVisitante());
+		
+	}
+	
+	
+	
 	
 
 }
