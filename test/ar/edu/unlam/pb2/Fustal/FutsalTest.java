@@ -56,10 +56,21 @@ public class FutsalTest {
 	public void queSePuedaRegistrarUnGol() {
 		Equipo local = new Equipo("Velez Sarsfield");
 		local.agregarJugador("Messi",300.00,39);
+		local.agregarJugador("Agüero",1200.00,32);
+		local.agregarJugador("Di Maria",890.00,45);
+		local.agregarJugador("Xavi",400.00,37);
+		local.agregarJugador("Fernandez", 234.33, 19);
 		Equipo visitante = new Equipo("Chicago");
-		Partido partido1 = new Partido(local,visitante);
-		partido1.getLocal().registrarGol("Messi",14.24);
-		assertNotNull(partido1.getLocal().getGol(0));
+		visitante.agregarJugador("Messi", 1200.00, 45);
+		visitante.agregarJugador("Di Maria", 890.00, 19);
+		visitante.agregarJugador("Xavi", 400.00, 32);
+		visitante.agregarJugador("Agüero",234.33, 39);
+		visitante.agregarJugador("Fernandez", 300.000, 37);
+		local.registrarGol("Messi",14.24);
+		assertNotNull(local.getGol(0));
+		Integer valorEsperado = 1;
+		Integer valorObtenido = local.getCantGoles();
+		assertEquals(valorEsperado,valorObtenido);
 		
 	}
 	
